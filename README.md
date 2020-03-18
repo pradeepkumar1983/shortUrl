@@ -33,8 +33,10 @@ $ cd shortUrl && docker-compose up
 ```
 ## Usage
 
-Request Method | URI | Body (JSON) | Description |  
-:---: | :--- | :---: | :--- |
-GET | http://localhost/url/{code} | - | Find long url and redirect | 
-GET | http://localhost/urlstats/summary | - | Get the statistics summary |
+Request Method | URI | Description |  
+:---: | :--- | :--- |
+POST | http://localhost/user/register | register user to get access to token| 
+POST | http://localhost/user/token    | token generation| 
+GET | http://localhost/url/{code}     | Find long url and redirect | 
+GET | http://localhost/urlstats/summary | Get the statistics summary |
 POST | http://localhost/url/shortener?longurl | { "longUrl": "[http...]" } | short url created from longurl | 
