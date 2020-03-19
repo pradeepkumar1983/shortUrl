@@ -1,4 +1,4 @@
-package com.neueda.shortenedurl.utils;
+package com.neueda.shortenedurl.config;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

@@ -6,7 +6,6 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -67,32 +66,8 @@ public class UrlEntity implements Serializable {
 		return longUrl;
 	}
 
-	public void setLongUrl(String longUrl) {
-		this.longUrl = longUrl;
-	}		
-
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
-
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
-	}	
-
 	public List<StatisticEntity> getStatistics() {
 		return statistics;
-	}
-
-	public void setStatistics(List<StatisticEntity> statistics) {
-		this.statistics = statistics;
 	}
 
 	@Override

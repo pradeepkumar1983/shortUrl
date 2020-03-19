@@ -1,7 +1,6 @@
 package com.neueda.shortenedurl.controller;
 
 import java.net.URI;
-import java.security.Principal;
 import java.util.regex.Pattern;
 
 import com.neueda.shortenedurl.model.StatisticEntity;
@@ -16,8 +15,6 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping(value = "/url")

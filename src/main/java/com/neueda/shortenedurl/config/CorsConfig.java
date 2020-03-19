@@ -1,4 +1,4 @@
-package com.neueda.shortenedurl.utils;
+package com.neueda.shortenedurl.config;
 
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
