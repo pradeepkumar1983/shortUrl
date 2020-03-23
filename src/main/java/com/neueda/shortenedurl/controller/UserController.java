@@ -16,7 +16,7 @@ import java.util.Date;
 public class UserController {
 
 	@Autowired
-	private UserService userService;
+	UserService userService;
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public AppUser registerUser(@RequestBody AppUser user) {
@@ -24,27 +24,21 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/token", method = RequestMethod.POST)
-	public String login(@RequestBody AppUser login) throws ServletException {
+	public String createToken(@RequestBody AppUser login) throws ServletException {
 
 		String jwtToken = "";
-
 		if (login.getEmail() == null || login.getPassword() == null) {
 			throw new ServletException("Please fill in username and password");
 		}
-
 		String email = login.getEmail();
 		String password = login.getPassword();
-
 		AppUser user = userService.findByEmail(email);
-
 		if (user == null) {
 			throw new ServletException("User email not found.");
 		}
-
 		String pwd = user.getPassword();
-
 		if (!password.equals(pwd)) {
-			throw new ServletException("Invalid login. Please check your name and password.");
+			throw new ServletException("Invalid password. Please check your name and password.");
 		}
 
 		jwtToken = Jwts.builder().setSubject(email).claim("roles", "user").setIssuedAt(new Date())
